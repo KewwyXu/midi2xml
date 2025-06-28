@@ -54,5 +54,9 @@
     "clean": "npm run clean:compile && npm run clean:build"
   },
   "author": "Kewwy Xu",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KewwyXu/midi2xml.git"
+  }
 }
