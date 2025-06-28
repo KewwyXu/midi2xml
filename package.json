@@ -1,5 +1,5 @@
 {
-  "name": "@kiwi/midi2xml",
+  "name": "@kewwy-xu/midi2xml",
   "version": "1.0.0",
   "description": "Used to convert midi to xml. Forked from @thayes/midi2xml(https://www.npmjs.com/package/@thayes/midi2xml). \n Compared to the original, this package exports parseMIDIToXML",
   "main": "lib/index.js",
@@ -58,5 +58,22 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KewwyXu/midi2xml.git"
-  }
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
+  "types": "./lib/index.d.ts",
+  "bugs": {
+    "url": "https://github.com/KewwyXu/midi2xml/issues"
+  },
+  "homepage": "https://github.com/KewwyXu/midi2xml#readme",
+  "directories": {
+    "lib": "lib",
+    "test": "tests"
+  },
+  "keywords": [
+    "midi",
+    "xml"
+  ]
 }
