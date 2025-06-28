@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "module": "es2020",
+    "target": "es2020",
+    "declaration": true,
+    "outDir": "./lib",
+    "sourceMap": true,
+    "typeRoots": ["./node_modules/@types", "./node_modules/**/", "./node_modules/**/lib"],
+    "moduleResolution": "node"
+  },
+  "include": [
+    "./**/*.ts",
+    "./node_modules/**/*.d.ts"
+  ],
+  "exclude": ["node_modules", "dist", "lib", "build", "coverage", "**/*.spec.ts", "**/*.test.ts", "**/*.d.ts"]
+}
