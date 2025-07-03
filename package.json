@@ -1,6 +1,6 @@
 {
   "name": "@kewwy-xu/midi2xml",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Used to convert midi to xml. Forked from @thayes/midi2xml(https://www.npmjs.com/package/@thayes/midi2xml). \n Compared to the original, this package exports parseMIDIToXML",
   "main": "./lib/index.js",
   "module": "./lib/index.js",
