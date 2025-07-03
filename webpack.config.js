@@ -1,5 +1,3 @@
-"use strict";
-
 import path from "path";
 import { fileURLToPath } from "url";
 
@@ -9,11 +7,14 @@ const __dirname = path.dirname(__filename);
 export default {
   mode: "development",
   entry: "./index.ts",
+  target: "node",
   output: {
     filename: "midi2xml.js",
     path: path.resolve(__dirname, "build"),
-    library: "MIDI2XML",
-    libraryTarget: "umd",
+    library: {
+      name: "midi2xml",
+      type: "umd",
+    },
     clean: true,
   },
   devtool: "inline-source-map",
@@ -31,12 +32,5 @@ export default {
   },
   resolve: {
     extensions: [".tsx", ".ts", ".js", ".html", ".css"],
-    fallback: {
-      path: "path-browserify",
-      fs: 'browserify-fs',
-      stream: "stream-browserify",
-      buffer: "buffer",
-      util: "util",
-    },
   },
 };

@@ -1,21 +1,14 @@
 {
   "name": "@kewwy-xu/midi2xml",
-  "version": "1.0.1",
+  "version": "1.0.3",
   "description": "Used to convert midi to xml. Forked from @thayes/midi2xml(https://www.npmjs.com/package/@thayes/midi2xml). \n Compared to the original, this package exports parseMIDIToXML",
-  "main": "lib/index.js",
-  "browser": "build/midi2xml.js",
+  "main": "./lib/index.js",
+  "module": "./lib/index.js",
   "type": "module",
   "dependencies": {
     "@thayes/midi-tools": "^0.1.0",
-    "browserify-fs": "^1.0.0",
-    "buffer": "^6.0.0",
-    "codemirror": "^5.40.2",
     "jasmid.ts": "^2.1.0",
-    "object.values": "^1.1.0",
-    "path-browserify": "^1.0.1",
-    "stream-browserify": "^3.0.0",
     "text-encoding": "^0.7.0",
-    "util": "^0.12.5",
     "xml-writer": "^1.7.0"
   },
   "devDependencies": {
@@ -35,7 +28,6 @@
     "rimraf": "^2.6.3",
     "ts-jest": "^29.4.0",
     "ts-loader": "^9.5.2",
-    "ts-node": "^10.9.2",
     "typescript": "^5.8.0",
     "webpack": "^5.99.9",
     "webpack-cli": "^4.10.0"
@@ -51,7 +43,9 @@
     "build": "webpack --mode production",
     "clean:build": "rimraf build",
     "clean:compile": "rimraf lib",
-    "clean": "npm run clean:compile && npm run clean:build"
+    "clean": "npm run clean:compile && npm run clean:build",
+    "link": "npm link",
+    "publish": "npm publish"
   },
   "author": "Kewwy Xu",
   "license": "ISC",
@@ -63,7 +57,7 @@
     "registry": "https://registry.npmjs.org/",
     "access": "public"
   },
-  "types": "./lib/index.d.ts",
+  "types": "./lib/*.d.ts",
   "bugs": {
     "url": "https://github.com/KewwyXu/midi2xml/issues"
   },
@@ -78,7 +72,6 @@
   ],
   "files": [
     "lib",
-    "build",
     "README.md",
     "LICENSE",
     "package.json"

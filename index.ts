@@ -234,19 +234,53 @@ function writeXML(xml: string, xmlPathWithFileName: string) {
     );
 }
 
-export const parseMIDIToXML = (midiPath: string, xmlPath?: string) => {
-    if (!fs.existsSync(midiPath)) {
-        throw new Error(`MIDI not found at ${midiPath}`);
-    }
-    
-    const midi = parseMidiFile(fs.readFileSync(midiPath).buffer);
-    const xml = toMusicXML(midi);
-    
-    let xmlPathWithFileName = xmlPath;
-    
-    if(xmlPathWithFileName == null){
-        xmlPathWithFileName = midiPath.replace(/\.mid$/, ".xml");
-    }
+/**
+ * 解析 MIDI 文件并生成 MusicXML 文件
+ * @param midiPath MIDI 文件路径
+ * @param xmlPath 可选，输出的 XML 文件路径，未指定时自动替换扩展名
+ * @returns Promise，解析和写入完成后 resolve
+ */
+export function parseMIDIToXML(midiPath: string, xmlPath?: string): Promise<any>;
 
-    return writeXML(xml, xmlPathWithFileName);
+/**
+ * 解析浏览器 File 对象的 MIDI 文件并生成 MusicXML 文件
+ * @param midiFile 浏览器 File 对象
+ * @param xmlPathWithFileName 输出的 XML 文件路径（含文件名）
+ * @returns Promise，解析和写入完成后 resolve
+ */
+export function parseMIDIToXML(midiFile: File, xmlPathWithFileName: string): Promise<any>;
+
+/**
+ * parseMIDIToXML 函数实现，兼容两种重载
+ */
+export function parseMIDIToXML(
+    midi: string | File,
+    xmlPath?: string
+): Promise<any> {
+    if (typeof midi === "string") {
+        // 处理文件路径
+        if (!fs.existsSync(midi)) {
+            throw new Error(`MIDI not found at ${midi}`);
+        }
+        const midiData = parseMidiFile(fs.readFileSync(midi).buffer);
+        const xml = toMusicXML(midiData);
+        let xmlPathWithFileName = xmlPath;
+        if (xmlPathWithFileName == null) {
+            xmlPathWithFileName = midi.replace(/\.mid$/, ".xml");
+        }
+        return writeXML(xml, xmlPathWithFileName);
+    } else {
+        // 处理 File 对象
+        if (!midi) {
+            throw new Error(`MIDI file is null or undefined`);
+        }
+        if (!xmlPath || !fs.existsSync(xmlPath)) {
+            throw new Error(`xmlPath not found at ${xmlPath}`);
+        }
+        return midi.arrayBuffer().then(buffer => {
+            const midiData = parseMidiFile(buffer);
+            const xml = toMusicXML(midiData);
+            return writeXML(xml, xmlPath!);
+        });
+    }
 }

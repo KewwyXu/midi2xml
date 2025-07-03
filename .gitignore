@@ -7,3 +7,5 @@ gen
 # project files
 node_modules
 build
+sample-midi/sample.xml
+sample.xml
