@@ -3,7 +3,7 @@ import 'core-js/stable';
 
 describe('parseMIDIToXML from midi path', () => {
     test('success', async () => {
-        await expect(parseMIDIToXML('C:\\code\\@kiwi\\midi2xml\\sample-midi\\sample.mid')).resolves.toBe('Parse midi to xml successfully');
+        await expect(parseMIDIToXML('C:\\code\\@kiwi\\midi2xml\\sample-midi\\sample.mid')).resolves.toHaveReturned();
     });
     
     test('fail to read midi', async () => {
@@ -30,7 +30,7 @@ describe('parseMIDIToXML from midi file', () => {
         const buffer = fs.readFileSync(filePath);
         // 使用 TypeScript 的 File 构造器
         const file = new File([buffer], 'sample.mid', { type: 'audio/midi' });
-        await expect(parseMIDIToXML(file, path.resolve(__dirname, '../sample-midi/sample.xml'))).resolves.toBe('Parse midi to xml successfully');
+        await expect(parseMIDIToXML(file, path.resolve(__dirname, '../sample-midi/sample.xml'))).resolves.toHaveReturned();
     });
 
     test('fail to read midi', async () => {

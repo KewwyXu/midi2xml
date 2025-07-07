@@ -9,3 +9,5 @@ node_modules
 build
 sample-midi/sample.xml
 sample.xml
+generated
+uploads

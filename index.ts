@@ -3,7 +3,8 @@
 type NoteItem = { note: number, channel: number, duration: number, instrumentId: number };
 
 import * as fs from "fs";
-import { TextDecoder } from "text-encoding";
+import pkg from "text-encoding";
+const { TextDecoder } = pkg;
 import { parseMidiFile } from "jasmid.ts";
 import XMLWriter from "xml-writer";
 import { NoteNumberToName } from "@thayes/midi-tools";
@@ -56,7 +57,7 @@ function writeNotes({ notes, writer, divisions, timeSignature }): void {
   );
 }
 
-function toMusicXML({ header, tracks }) {
+function toMusicXML({ header, tracks }) : string {
   const ticksPerBeat = header.ticksPerBeat;
 
   const notesByTrack: {
@@ -238,25 +239,25 @@ function writeXML(xml: string, xmlPathWithFileName: string) {
  * 解析 MIDI 文件并生成 MusicXML 文件
  * @param midiPath MIDI 文件路径
  * @param xmlPath 可选，输出的 XML 文件路径，未指定时自动替换扩展名
- * @returns Promise，解析和写入完成后 resolve
+ * @returns Promise的结果是xml字符串
  */
-export function parseMIDIToXML(midiPath: string, xmlPath?: string): Promise<any>;
+export async function parseMIDIToXML(midiPath: string, xmlPath?: string): Promise<string>;
 
 /**
  * 解析浏览器 File 对象的 MIDI 文件并生成 MusicXML 文件
  * @param midiFile 浏览器 File 对象
  * @param xmlPathWithFileName 输出的 XML 文件路径（含文件名）
- * @returns Promise，解析和写入完成后 resolve
+ * @returns Promise的结果是xml字符串
  */
-export function parseMIDIToXML(midiFile: File, xmlPathWithFileName: string): Promise<any>;
+export async function parseMIDIToXML(midiFile: File, xmlPathWithFileName: string): Promise<string>;
 
 /**
  * parseMIDIToXML 函数实现，兼容两种重载
  */
-export function parseMIDIToXML(
+export async function parseMIDIToXML(
     midi: string | File,
     xmlPath?: string
-): Promise<any> {
+): Promise<string> {
     if (typeof midi === "string") {
         // 处理文件路径
         if (!fs.existsSync(midi)) {
@@ -268,7 +269,8 @@ export function parseMIDIToXML(
         if (xmlPathWithFileName == null) {
             xmlPathWithFileName = midi.replace(/\.mid$/, ".xml");
         }
-        return writeXML(xml, xmlPathWithFileName);
+        writeXML(xml, xmlPathWithFileName);
+        return xml;
     } else {
         // 处理 File 对象
         if (!midi) {
@@ -277,10 +279,10 @@ export function parseMIDIToXML(
         if (!xmlPath || !fs.existsSync(xmlPath)) {
             throw new Error(`xmlPath not found at ${xmlPath}`);
         }
-        return midi.arrayBuffer().then(buffer => {
-            const midiData = parseMidiFile(buffer);
-            const xml = toMusicXML(midiData);
-            return writeXML(xml, xmlPath!);
-        });
+
+        const midiData = parseMidiFile(await midi.arrayBuffer());
+        const xml = toMusicXML(midiData);
+        writeXML(xml, xmlPath!);
+        return xml;
     }
 }

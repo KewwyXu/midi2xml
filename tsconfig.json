@@ -7,11 +7,13 @@
     "outDir": "./lib",
     "sourceMap": true,
     "typeRoots": ["./node_modules/@types", "./node_modules/**/", "./node_modules/**/lib"],
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   },
   "include": [
     "./**/*.ts",
-    "./node_modules/**/*.d.ts"
+    "./server/**/*"
   ],
   "exclude": ["node_modules", "dist", "lib", "build", "coverage", "**/*.spec.ts", "**/*.test.ts", "**/*.d.ts"]
 }
