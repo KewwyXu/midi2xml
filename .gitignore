@@ -11,3 +11,4 @@ sample-midi/sample.xml
 sample.xml
 generated
 uploads
+tests/*.json

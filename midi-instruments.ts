@@ -1,525 +1,522 @@
 const instruments = {
   "1": {
-    "name": "Acoustic Grand Piano",
+    name: "Acoustic Grand Piano",
   },
-  
+
   "2": {
-    "name": "Bright Acoustic Piano",
+    name: "Bright Acoustic Piano",
   },
-  
+
   "3": {
-    "name": "Electric Grand Piano",
+    name: "Electric Grand Piano",
   },
-  
+
   "4": {
-    "name": "Honky-tonk Piano",
+    name: "Honky-tonk Piano",
   },
-  
+
   "5": {
-    "name": "Electric Piano 1",
+    name: "Electric Piano 1",
   },
-  
+
   "6": {
-    "name": "Electric Piano 2",
+    name: "Electric Piano 2",
   },
-  
+
   "7": {
-    "name": "Harpsichord",
+    name: "Harpsichord",
   },
-  
+
   "8": {
-    "name": "Clavi",
+    name: "Clavi",
   },
-  
+
   "9": {
-    "name": "Celesta",
+    name: "Celesta",
   },
-  
+
   "10": {
-    "name": "Glockenspiel",
+    name: "Glockenspiel",
   },
-  
+
   "11": {
-    "name": "Music Box",
+    name: "Music Box",
   },
-  
+
   "12": {
-    "name": "Vibraphone",
+    name: "Vibraphone",
   },
-  
+
   "13": {
-    "name": "Marimba",
+    name: "Marimba",
   },
-  
+
   "14": {
-    "name": "Xylophone",
+    name: "Xylophone",
   },
-  
+
   "15": {
-    "name": "Tubular Bells",
+    name: "Tubular Bells",
   },
-  
+
   "16": {
-    "name": "Dulcimer",
+    name: "Dulcimer",
   },
-  
+
   "17": {
-    "name": "Drawbar Organ",
+    name: "Drawbar Organ",
   },
-  
+
   "18": {
-    "name": "Percussive Organ",
+    name: "Percussive Organ",
   },
-  
+
   "19": {
-    "name": "Rock Organ",
+    name: "Rock Organ",
   },
-  
+
   "20": {
-    "name": "Church Organ",
+    name: "Church Organ",
   },
-  
+
   "21": {
-    "name": "Reed Organ",
+    name: "Reed Organ",
   },
-  
+
   "22": {
-    "name": "Accordion",
+    name: "Accordion",
   },
-  
+
   "23": {
-    "name": "Harmonica",
+    name: "Harmonica",
   },
-  
+
   "24": {
-    "name": "Tango Accordion",
+    name: "Tango Accordion",
   },
-  
+
   "25": {
-    "name": "Acoustic Guitar (nylon)",
+    name: "Acoustic Guitar (nylon)",
   },
-  
+
   "26": {
-    "name": "Acoustic Guitar (steel)",
+    name: "Acoustic Guitar (steel)",
   },
-  
+
   "27": {
-    "name": "Electric Guitar (jazz)",
+    name: "Electric Guitar (jazz)",
   },
-  
+
   "28": {
-    "name": "Electric Guitar (clean)",
+    name: "Electric Guitar (clean)",
   },
-  
+
   "29": {
-    "name": "Electric Guitar (muted)",
+    name: "Electric Guitar (muted)",
   },
-  
+
   "30": {
-    "name": "Overdriven Guitar",
+    name: "Overdriven Guitar",
   },
-  
+
   "31": {
-    "name": "Distortion Guitar",
+    name: "Distortion Guitar",
   },
-  
+
   "32": {
-    "name": "Guitar harmonics",
+    name: "Guitar harmonics",
   },
-  
+
   "33": {
-    "name": "Acoustic Bass",
+    name: "Acoustic Bass",
   },
-  
+
   "34": {
-    "name": "Electric Bass (finger)",
+    name: "Electric Bass (finger)",
   },
-  
+
   "35": {
-    "name": "Electric Bass (pick)",
+    name: "Electric Bass (pick)",
   },
-  
+
   "36": {
-    "name": "Fretless Bass",
+    name: "Fretless Bass",
   },
-  
+
   "37": {
-    "name": "Slap Bass 1",
+    name: "Slap Bass 1",
   },
-  
+
   "38": {
-    "name": "Slap Bass 2",
+    name: "Slap Bass 2",
   },
-  
+
   "39": {
-    "name": "Synth Bass 1",
+    name: "Synth Bass 1",
   },
-  
+
   "40": {
-    "name": "Synth Bass 2",
+    name: "Synth Bass 2",
   },
-  
+
   "41": {
-    "name": "Violin",
+    name: "Violin",
   },
-  
+
   "42": {
-    "name": "Viola",
+    name: "Viola",
   },
-  
+
   "43": {
-    "name": "Cello",
+    name: "Cello",
   },
-  
+
   "44": {
-    "name": "Contrabass",
+    name: "Contrabass",
   },
-  
+
   "45": {
-    "name": "Tremolo Strings",
+    name: "Tremolo Strings",
   },
-  
+
   "46": {
-    "name": "Pizzicato Strings",
+    name: "Pizzicato Strings",
   },
-  
+
   "47": {
-    "name": "Orchestral Harp",
+    name: "Orchestral Harp",
   },
-  
+
   "48": {
-    "name": "Timpani",
+    name: "Timpani",
   },
-  
+
   "49": {
-    "name": "String Ensemble 1",
+    name: "String Ensemble 1",
   },
-  
+
   "50": {
-    "name": "String Ensemble 2",
+    name: "String Ensemble 2",
   },
-  
+
   "51": {
-    "name": "SynthStrings 1",
+    name: "SynthStrings 1",
   },
-  
+
   "52": {
-    "name": "SynthStrings 2",
+    name: "SynthStrings 2",
   },
-  
+
   "53": {
-    "name": "Choir Aahs",
+    name: "Choir Aahs",
   },
-  
+
   "54": {
-    "name": "Voice Oohs",
+    name: "Voice Oohs",
   },
-  
+
   "55": {
-    "name": "Synth Voice",
+    name: "Synth Voice",
   },
-  
+
   "56": {
-    "name": "Orchestra Hit",
+    name: "Orchestra Hit",
   },
-  
+
   "57": {
-    "name": "Trumpet",
+    name: "Trumpet",
   },
-  
+
   "58": {
-    "name": "Trombone",
+    name: "Trombone",
   },
-  
+
   "59": {
-    "name": "Tuba",
+    name: "Tuba",
   },
-  
+
   "60": {
-    "name": "Muted Trumpet",
+    name: "Muted Trumpet",
   },
-  
+
   "61": {
-    "name": "French Horn",
+    name: "French Horn",
   },
-  
+
   "62": {
-    "name": "Brass Section",
+    name: "Brass Section",
   },
-  
+
   "63": {
-    "name": "SynthBrass 1",
+    name: "SynthBrass 1",
   },
-  
+
   "64": {
-    "name": "SynthBrass 2",
+    name: "SynthBrass 2",
   },
-  
+
   "65": {
-    "name": "Soprano Sax",
+    name: "Soprano Sax",
   },
-  
+
   "66": {
-    "name": "Alto Sax",
+    name: "Alto Sax",
   },
-  
+
   "67": {
-    "name": "Tenor Sax",
+    name: "Tenor Sax",
   },
-  
+
   "68": {
-    "name": "Baritone Sax",
+    name: "Baritone Sax",
   },
-  
+
   "69": {
-    "name": "Oboe",
+    name: "Oboe",
   },
-  
+
   "70": {
-    "name": "English Horn",
+    name: "English Horn",
   },
-  
+
   "71": {
-    "name": "Bassoon",
+    name: "Bassoon",
   },
-  
+
   "72": {
-    "name": "Clarinet",
+    name: "Clarinet",
   },
-  
+
   "73": {
-    "name": "Piccolo",
+    name: "Piccolo",
   },
-  
+
   "74": {
-    "name": "Flute",
+    name: "Flute",
   },
-  
+
   "75": {
-    "name": "Recorder",
+    name: "Recorder",
   },
-  
+
   "76": {
-    "name": "Pan Flute",
+    name: "Pan Flute",
   },
-  
+
   "77": {
-    "name": "Blown Bottle",
+    name: "Blown Bottle",
   },
-  
+
   "78": {
-    "name": "Shakuhachi",
+    name: "Shakuhachi",
   },
-  
+
   "79": {
-    "name": "Whistle",
+    name: "Whistle",
   },
-  
+
   "80": {
-    "name": "Ocarina",
+    name: "Ocarina",
   },
-  
+
   "81": {
-    "name": "Lead 1 (square)",
+    name: "Lead 1 (square)",
   },
-  
+
   "82": {
-    "name": "Lead 2 (sawtooth)",
+    name: "Lead 2 (sawtooth)",
   },
-  
+
   "83": {
-    "name": "Lead 3 (calliope)",
+    name: "Lead 3 (calliope)",
   },
-  
+
   "84": {
-    "name": "Lead 4 (chiff)",
+    name: "Lead 4 (chiff)",
   },
-  
+
   "85": {
-    "name": "Lead 5 (charang)",
+    name: "Lead 5 (charang)",
   },
-  
+
   "86": {
-    "name": "Lead 6 (voice)",
+    name: "Lead 6 (voice)",
   },
-  
+
   "87": {
-    "name": "Lead 7 (fifths)",
+    name: "Lead 7 (fifths)",
   },
-  
+
   "88": {
-    "name": "Lead 8 (bass + lead)",
+    name: "Lead 8 (bass + lead)",
   },
-  
+
   "89": {
-    "name": "Pad 1 (new age)",
+    name: "Pad 1 (new age)",
   },
-  
+
   "90": {
-    "name": "Pad 2 (warm)",
+    name: "Pad 2 (warm)",
   },
-  
+
   "91": {
-    "name": "Pad 3 (polysynth)",
+    name: "Pad 3 (polysynth)",
   },
-  
+
   "92": {
-    "name": "Pad 4 (choir)",
+    name: "Pad 4 (choir)",
   },
-  
+
   "93": {
-    "name": "Pad 5 (bowed)",
+    name: "Pad 5 (bowed)",
   },
-  
+
   "94": {
-    "name": "Pad 6 (metallic)",
+    name: "Pad 6 (metallic)",
   },
-  
+
   "95": {
-    "name": "Pad 7 (halo)",
+    name: "Pad 7 (halo)",
   },
-  
+
   "96": {
-    "name": "Pad 8 (sweep)",
+    name: "Pad 8 (sweep)",
   },
-  
+
   "97": {
-    "name": "FX 1 (rain)",
+    name: "FX 1 (rain)",
   },
-  
+
   "98": {
-    "name": "FX 2 (soundtrack)",
+    name: "FX 2 (soundtrack)",
   },
-  
+
   "99": {
-    "name": "FX 3 (crystal)",
+    name: "FX 3 (crystal)",
   },
-  
+
   "100": {
-    "name": "FX 4 (atmosphere)",
+    name: "FX 4 (atmosphere)",
   },
-  
+
   "101": {
-    "name": "FX 5 (brightness)",
+    name: "FX 5 (brightness)",
   },
-  
+
   "102": {
-    "name": "FX 6 (goblins)",
+    name: "FX 6 (goblins)",
   },
-  
+
   "103": {
-    "name": "FX 7 (echoes)",
+    name: "FX 7 (echoes)",
   },
-  
+
   "104": {
-    "name": "FX 8 (sci-fi)",
+    name: "FX 8 (sci-fi)",
   },
-  
+
   "105": {
-    "name": "Sitar",
+    name: "Sitar",
   },
-  
+
   "106": {
-    "name": "Banjo",
+    name: "Banjo",
   },
-  
+
   "107": {
-    "name": "Shamisen",
+    name: "Shamisen",
   },
-  
+
   "108": {
-    "name": "Koto",
+    name: "Koto",
   },
-  
+
   "109": {
-    "name": "Kalimba",
+    name: "Kalimba",
   },
-  
+
   "110": {
-    "name": "Bag pipe",
+    name: "Bag pipe",
   },
-  
+
   "111": {
-    "name": "Fiddle",
+    name: "Fiddle",
   },
-  
+
   "112": {
-    "name": "Shanai",
+    name: "Shanai",
   },
-  
+
   "113": {
-    "name": "Tinkle Bell",
+    name: "Tinkle Bell",
   },
-  
+
   "114": {
-    "name": "Agogo",
+    name: "Agogo",
   },
-  
+
   "115": {
-    "name": "Steel Drums",
+    name: "Steel Drums",
   },
-  
+
   "116": {
-    "name": "Woodblock",
+    name: "Woodblock",
   },
-  
+
   "117": {
-    "name": "Taiko Drum",
+    name: "Taiko Drum",
   },
-  
+
   "118": {
-    "name": "Melodic Tom",
+    name: "Melodic Tom",
   },
-  
+
   "119": {
-    "name": "Synth Drum",
+    name: "Synth Drum",
   },
-  
+
   "120": {
-    "name": "Reverse Cymbal",
+    name: "Reverse Cymbal",
   },
-  
+
   "121": {
-    "name": "Guitar Fret Noise",
+    name: "Guitar Fret Noise",
   },
-  
+
   "122": {
-    "name": "Breath Noise",
+    name: "Breath Noise",
   },
-  
+
   "123": {
-    "name": "Seashore",
+    name: "Seashore",
   },
-  
+
   "124": {
-    "name": "Bird Tweet",
+    name: "Bird Tweet",
   },
-  
+
   "125": {
-    "name": "Telephone Ring",
+    name: "Telephone Ring",
   },
-  
+
   "126": {
-    "name": "Helicopter",
+    name: "Helicopter",
   },
-  
+
   "127": {
-    "name": "Applause",
+    name: "Applause",
   },
-  
+
   "128": {
-    "name": "Gunshot",
+    name: "Gunshot",
   },
 };
 
 export function getInstrumentName({ instrumentId }): string {
   instrumentId += 1;
-  console.log({
-    instrumentId,
-  });
 
   if (!(instrumentId in instruments)) {
-    return '';
+    return "";
   }
   
   return instruments[instrumentId].name;
