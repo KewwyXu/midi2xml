@@ -2,9 +2,9 @@
 
 import pkg from "text-encoding";
 import XMLWriter from "xml-writer";
-import { getInstrumentName } from "./midi-instruments";
-import { extractDetailsFromMIDI, groupNotesByTimePeriod } from "./utils";
-import { KeySignature, MIDI, Note, Sign, TimePeriod, TimeSignature, XMLNote } from "./types";
+import {getInstrumentName} from "./midi-instruments";
+import {extractDetailsFromMIDI, groupNotesByTimePeriod} from "./utils";
+import {KeySignature, MIDI, Note, Sign, TimePeriod, TimeSignature, XMLNote} from "./types";
 import _ from "lodash";
 
 const { TextDecoder } = pkg;

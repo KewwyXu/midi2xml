@@ -25,34 +25,34 @@ function writeXML(xml: string, xmlPathWithFileName: string) {
  */
 export async function parseMIDIToXML(
    midiPath: string,
-   xmlPath?: string,
-   title?: string,
-   jsonsPath?: string
+   xmlPath?: string | undefined,
+   title?: string | undefined,
+   jsonsPath?: string | undefined
 ): Promise<string>;
 
 /**
- * 解析浏览器 File 对象的 MIDI 文件并生成 MusicXML 文件
+ * 解析ArrayBufferLike并生成 MusicXML 文件
  * @param midiFile 浏览器 File 对象
- * @param xmlPathWithFileName 输出的 XML 文件路径（含文件名）
+ * @param xmlPath 输出的 XML 文件路径（含文件名）
  * @param title
  * @param jsonsPath
  * @returns Promise的结果是xml字符串
  */
 export async function parseMIDIToXML(
-   midiFile: File,
-   xmlPathWithFileName: string,
-   title?: string,
-   jsonsPath?: string
+   midiFile: ArrayBufferLike,
+   xmlPath?: string | undefined,
+   title?: string | undefined,
+   jsonsPath?: string | undefined
 ): Promise<string>;
 
 /**
  * parseMIDIToXML 函数实现，兼容两种重载
  */
 export async function parseMIDIToXML(
-   midi: string | File,
-   xmlPath?: string,
-   title?: string,
-   jsonsPath?: string
+   midi: string | ArrayBufferLike,
+   xmlPath?: string | undefined,
+   title?: string | undefined,
+   jsonsPath?: string | undefined
 ): Promise<string> {
    try {
       if (typeof midi === "string") {
@@ -74,22 +74,23 @@ export async function parseMIDIToXML(
          }
 
          const xml = toMusicXML(midiData, title);
-         let xmlPathWithFileName = xmlPath;
-         if (xmlPathWithFileName == null) {
-            xmlPathWithFileName = midi.replace(/\.mid$/, ".xml");
+
+         if (xmlPath) {
+            let xmlPathWithFileName = xmlPath;
+            if (xmlPathWithFileName == null) {
+               xmlPathWithFileName = midi.replace(/\.mid$/, ".xml");
+            }
+            writeXML(xml, xmlPathWithFileName);
          }
-         writeXML(xml, xmlPathWithFileName);
+
          return xml;
       } else {
-         // 处理 File 对象
+         // 处理 ArrayBufferLike
          if (!midi) {
             throw new Error(`MIDI file is null or undefined`);
          }
-         if (!xmlPath || !fs.existsSync(xmlPath)) {
-            throw new Error(`xmlPath not found at ${xmlPath}`);
-         }
 
-         const midiData = parseMidiFile(await midi.arrayBuffer());
+         const midiData = parseMidiFile(midi);
 
          if (jsonsPath) {
             fs.writeFile(jsonsPath, JSON.stringify(midiData), (err) => {
@@ -102,8 +103,12 @@ export async function parseMIDIToXML(
             });
          }
 
-         const xml = toMusicXML(midiData, title ?? midi.name.split(".").shift());
-         writeXML(xml, xmlPath);
+         const xml = toMusicXML(midiData, title);
+
+         if (xmlPath) {
+            writeXML(xml, xmlPath);
+         }
+
          return xml;
       }
    } catch (error) {

@@ -99,6 +99,7 @@ export function NoteNumberToName(note: number): IPitch {
    const noteObj: IPitch = {
       step,
       octave,
+      MIDINumber: note,
    };
 
    if (alter) {
@@ -117,9 +118,9 @@ export const groupNotesByTimePeriod = (notes: Note[]): List<TimePeriodXMLNote> =
 
    notes.sort((a, b) => a.startTick - b.startTick);
 
-   let notesMap = Map<number, Note[]>();
+   const notesMap = Map<number, Note[]>().asMutable();
    for (const note of notes) {
-      notesMap = notesMap.update(note.startTick, (arr) => [note].concat(arr ?? []));
+      notesMap.update(note.startTick, (arr) => [note].concat(arr ?? []));
    }
 
    let startTick = 0;
@@ -139,7 +140,7 @@ export const groupNotesByTimePeriod = (notes: Note[]): List<TimePeriodXMLNote> =
                .filter((tick) => tick > startTick)
          )!;
       } else {
-         notesMap = notesMap.remove(startTick);
+         notesMap.remove(startTick);
          nextStartTick = _.min(startTickNotes.map((note) => note.endTick).concat(notesMap.keySeq().toArray()))!;
 
          const newNotes = startTickNotes
