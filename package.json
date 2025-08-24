@@ -20,7 +20,8 @@
     "clean": "npm run clean:compile && npm run clean:build",
     "link": "npm link",
     "publish": "npm publish",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "pm2:restart": "pm2 restart ecosystem.config.cjs --env production"
   },
   "dependencies": {
     "@thayes/midi-tools": "^0.1.0",
