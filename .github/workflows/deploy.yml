@@ -6,7 +6,7 @@ on:
 
 jobs:
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: centos-stream-9
     steps:
     - name: Deploy to server via SSH
       uses: appleboy/ssh-action@v1.0.0
