@@ -50,7 +50,7 @@ if (saveFile) {
    const upload = multer({ storage: storage });
 
    // MIDI 转换接口
-   app.post("/parseMIDIToXML", upload.single("midiFile"), (async (req, res) => {
+   app.post("/api/parseMIDIToXML", upload.single("midiFile"), (async (req, res) => {
       try {
          if (!req.file) {
             return res.status(400).json({ error: "未上传文件" });
@@ -81,7 +81,7 @@ if (saveFile) {
    const upload = multer({ storage: storage });
 
    // MIDI 转换接口
-   app.post("/parseMIDIToXML", upload.single("midiFile"), (async (req, res) => {
+   app.post("/api/parseMIDIToXML", upload.single("midiFile"), (async (req, res) => {
       try {
          if (!req.file) {
             return res.status(400).json({ error: "未上传文件" });
