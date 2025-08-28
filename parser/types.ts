@@ -1,5 +1,5 @@
 ﻿import { MidiEvent } from "jasmid.ts";
-import { IPitch } from "@thayes/midi-tools/utils/IPitch";
+import { IPitch } from "@thayes/midi-tools/utils/IPitch.js";
 
 export enum Sign {
    G = "G",

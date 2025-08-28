@@ -1,19 +1,34 @@
 {
   "compilerOptions": {
     "strictNullChecks": true,
-    "module": "es2020",
+    "module": "NodeNext",
     "target": "es2020",
     "declaration": true,
     "outDir": "./lib",
     "sourceMap": true,
-    "typeRoots": ["./node_modules/@types", "./node_modules/**/", "./node_modules/**/lib"],
-    "moduleResolution": "node",
+    "typeRoots": [
+      "./node_modules/@types",
+      "./node_modules/**/",
+      "./node_modules/**/lib"
+    ],
+    "moduleResolution": "NodeNext",
     "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true
+    "esModuleInterop": true,
+//    "allowImportingTsExtensions": true,
+//    "emit": true
   },
   "include": [
     "./**/*.ts",
     "./server/**/*"
   ],
-  "exclude": ["node_modules", "dist", "lib", "build", "coverage", "**/*.spec.ts", "**/*.test.ts", "**/*.d.ts"]
+  "exclude": [
+    "node_modules",
+    "dist",
+    "lib",
+    "build",
+    "coverage",
+    "**/*.spec.ts",
+    "**/*.test.ts",
+    "**/*.d.ts"
+  ]
 }

@@ -1,5 +1,5 @@
-﻿import { KeySignature, MIDI, Mode, Note, NoteType, TimePeriodXMLNote, TimeSignature } from "./types";
-import { IPitch } from "@thayes/midi-tools/utils/IPitch";
+﻿import { KeySignature, MIDI, Mode, Note, NoteType, TimePeriodXMLNote, TimeSignature } from "./types.js";
+import { IPitch } from "@thayes/midi-tools/utils/IPitch.js";
 import { List, Map } from "immutable";
 import _ from "lodash";
 
